@@ -3,29 +3,29 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master  # Trigger this action when pushing to 'main'
+      - master  # Trigger the workflow when pushing to the 'master' branch
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout the repository
-      uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3  # Latest version of checkout
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v3  # Ensure you are using v3 for Node.js 20 support
       with:
-        node-version: '16'
+        node-version: '20'  # Explicitly using Node.js 20
 
     - name: Install dependencies
       run: npm install
 
     - name: Build the project
-      run: npm run build
+      run: npm run build  # Assumes your build directory is 'dist'
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v3  # Use v3 or latest for gh-pages deployment
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
