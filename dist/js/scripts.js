@@ -1,7 +1,7 @@
 /*!
-* Start Bootstrap - Agency v7.0.12 (https://startbootstrap.com/theme/agency)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
+* Start Bootstrap - Vizograph  v0.0.1 (https://vizograph.com)
+* Copyright 2013-2024 Juned Chhipa
+* Licensed under undefined (https://github.com/StartBootstrap/vizograph-solutions/blob/master/LICENSE)
 */
 //
 // Scripts
