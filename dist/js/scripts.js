@@ -1,6 +1,6 @@
 /*!
 * Start Bootstrap - Vizograph  v0.0.1 (https://vizograph.com)
-* Copyright 2013-2025 Juned Chhipa
+* Copyright 2013-2026 Juned Chhipa
 * Licensed under undefined (https://github.com/StartBootstrap/vizograph-solutions/blob/master/LICENSE)
 */
 //
