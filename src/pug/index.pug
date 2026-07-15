@@ -28,6 +28,17 @@ html(lang='en')
         // Core theme CSS (includes Bootstrap)
         link(href='css/styles.css', rel='stylesheet')
 
+        //- Google tag (gtag.js)
+        script(async src="https://www.googletagmanager.com/gtag/js?id=G-0VF98ZD366")
+        script.
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-0VF98ZD366');
+
     body#page-top
 
         // Navigation
