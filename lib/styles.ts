@@ -6,22 +6,30 @@ import { cn } from "./cn";
 /** Outer gutter of every full-width block, so panels line up down the page. */
 export const pageGutter = "px-3 sm:px-4";
 
-/** Surfaces a bento tile can wear. */
+/** Surfaces a tile can wear. */
 export const tileTones = {
-  panel: "bg-panel ring-1 ring-black/5",
-  card: "bg-card/60 ring-1 ring-black/5",
-  dark: "bg-night text-white",
-  accent: "bg-linear-to-br from-accent-light via-accent to-accent-strong text-ink",
+  /** Frosted dark card: the default. */
+  glass: "glass ring-1 ring-white/10",
+  /** Slightly lifted solid card. */
+  card: "bg-card ring-1 ring-white/10",
+  /** Brand gradient, for the one highlighted item in a group. */
+  accent: "bg-linear-to-br from-accent via-accent-deep to-accent-soft text-ground",
+  /** Amber gradient, used sparingly. */
+  amber: "bg-linear-to-br from-amber-soft to-amber text-ground",
 } as const;
 
 export type TileTone = keyof typeof tileTones;
 
-/** Rounded surface used by every grid tile: tile("dark", "p-8"). */
-export const tile = (tone: TileTone = "panel", className?: string) =>
+/** Rounded surface used by every grid tile: tile("glass", "p-8"). */
+export const tile = (tone: TileTone = "glass", className?: string) =>
   cn("rounded-4xl", tileTones[tone], className);
 
 /** Hover behaviour for clickable tiles. */
-export const hoverLift = "transition duration-300 hover:-translate-y-1 hover:shadow-lift";
+export const hoverLift =
+  "transition duration-300 hover:-translate-y-1 hover:shadow-lift hover:ring-accent/40";
 
-/** Small pill label, e.g. "Open source" or "Category: Developer Tools". */
+/** Small pill label. */
 export const chip = "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium";
+
+/** Uppercase label above a heading. */
+export const eyebrow = "text-xs font-semibold tracking-[0.2em] uppercase";

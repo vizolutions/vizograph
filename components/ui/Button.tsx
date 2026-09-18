@@ -3,21 +3,25 @@ import type { ComponentPropsWithoutRef } from "react";
 import { cn } from "@/lib/cn";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-[background-color,filter,color] disabled:opacity-60";
+  "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-[background-color,box-shadow,filter,color] disabled:opacity-60";
 
 const variants = {
-  /** Main call to action: the brand gradient. */
-  accent: "bg-linear-to-b from-accent-soft to-accent text-ink shadow-accent hover:brightness-105",
-  /** Solid dark button. */
-  dark: "bg-ink text-white hover:bg-black",
-  /** Quiet button on a light background. */
-  subtle: "bg-black/8 text-ink ring-1 ring-black/10 backdrop-blur-sm hover:bg-white/70",
+  /** Main call to action: the logo's cyan-to-teal gradient. */
+  accent:
+    "bg-linear-to-r from-accent via-accent-deep to-accent-soft text-ground shadow-glow-accent hover:brightness-110",
+  /** Bright pill on the dark ground. */
+  light: "bg-ink text-ground shadow-panel hover:bg-white",
+  /** Quiet frosted button. */
+  glass: "glass text-ink ring-1 ring-white/15 hover:ring-white/30",
+  /** Amber accent, used sparingly. */
+  amber:
+    "bg-linear-to-r from-amber-soft to-amber text-ground shadow-glow-amber hover:brightness-110",
 } as const;
 
 const sizes = {
   sm: "px-4 py-2.5 text-sm",
   md: "px-5 py-3 text-sm",
-  lg: "px-6 py-3.5 text-base",
+  lg: "px-7 py-3.5 text-base",
 } as const;
 
 type StyleProps = {

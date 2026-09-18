@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Silkscreen, Space_Grotesk } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@/components/layout/Analytics";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
@@ -7,12 +7,7 @@ import { site } from "@/lib/content";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk" });
-const silkscreen = Silkscreen({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-silkscreen",
-});
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -44,15 +39,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#e8e7e4",
+  themeColor: "#080a11",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${spaceGrotesk.variable} ${silkscreen.variable} antialiased`}
-    >
+    <html lang="en" className={`${inter.variable} ${jakarta.variable} antialiased`}>
       <body className="font-sans">
         <Navbar />
         <main>{children}</main>

@@ -3,7 +3,6 @@
 
 export const site = {
   name: "Vizograph Solutions",
-  shortName: "Vizograph",
   description:
     "Vizograph Solutions transforms complex data into visually engaging and insightful narratives: tailored data visualization, interactive dashboards and advanced AI analytics.",
   url: "https://www.vizograph.com",
@@ -27,8 +26,6 @@ export const sections = [
   { id: "contact", label: "Contact" },
 ] as const;
 
-export type SectionId = (typeof sections)[number]["id"];
-
 export const navLinks = sections.map((section) => ({
   label: section.label,
   href: `#${section.id}`,
@@ -40,11 +37,6 @@ export const hero = {
   subheading: "Transforming data into meaningful insights",
   primaryCta: { label: "What we do", href: "#services" },
   secondaryCta: { label: "See our work", href: "#work" },
-  stat: { value: "2017", label: "Since" },
-  statText:
-    "Building charts for the web: ApexCharts.js became one of the most popular charting solutions.",
-  sideText: "Tailored visualizations, interactive dashboards and AI analytics.",
-  wordmark: ["Vizo", "graph"],
 };
 
 /* -------------------------------------------------------------------------- */
@@ -55,7 +47,6 @@ export const services = {
   eyebrow: "Services",
   heading: "What we do",
   subheading: "We transform complex data into visually engaging and insightful narratives.",
-  lead: "From a single chart to a full reporting platform, we design and build the way your data is seen.",
   items: [
     {
       icon: "chart",
@@ -85,11 +76,9 @@ export type Project = {
   caption: string;
   intro: string;
   description: string;
-  /** Project image. Vizantra has none yet and uses a typographic tile instead. */
-  image?: string;
-  /** Set when the project lives elsewhere: the card links straight out, no page here. */
+  /** Set when the project lives elsewhere: the card links straight out. */
   external?: string;
-  /** Shown as a button on the project page. */
+  /** Where the card points, for projects with their own page on the web. */
   link?: string;
   details: { label?: string; value: string }[];
 };
@@ -119,7 +108,6 @@ export const projects = {
       intro: "Making visualizations easy for developers",
       description:
         "ApexCharts is a modern charting library that helps developers to create beautiful and interactive visualizations for web pages.",
-      image: "/images/projects/apexcharts.jpg",
       link: "https://apexcharts.com",
       details: [{ value: "Open Source" }, { label: "Category", value: "Developer Tools" }],
     },
@@ -130,7 +118,6 @@ export const projects = {
       intro: "Graph Maker",
       description:
         "Beautiful, interactive, and insightful data visualizations using online graph maker.",
-      image: "/images/projects/apex-editor.jpg",
       link: "https://editor.apexcharts.com/c/new",
       details: [{ label: "Category", value: "Design Tools" }],
     },
@@ -140,7 +127,6 @@ export const projects = {
       caption: "Sankey diagrams",
       intro: "JavaScript Sankey Charts",
       description: "A JavaScript library to create beautiful sankey charts on the web.",
-      image: "/images/projects/apex-sankey.jpg",
       link: "https://apexcharts.com/apexsankey",
       details: [{ value: "Open-source" }, { label: "Category", value: "Developer Tools" }],
     },
@@ -151,7 +137,6 @@ export const projects = {
       intro: "Organizational Chart Library",
       description:
         "A library to create customizable organizational charts to illustrate hierarchical structure of a company, highlighting its roles and relationships.",
-      image: "/images/projects/apex-tree.jpg",
       link: "https://apexcharts.com/apextree",
       details: [{ value: "Open-source" }, { label: "Category", value: "Developer Tools" }],
     },
@@ -162,7 +147,6 @@ export const projects = {
       intro: "Put your data on a map, geography included",
       description:
         "Choropleths, bubbles, markers and routes over 26 built-in geometry packs, so you are never the one finding, converting, or hosting boundary files.",
-      image: "/images/projects/apexmaps.jpg",
       link: "https://apexcharts.com/apexmaps",
       details: [{ label: "Category", value: "Developer Tools" }],
     },
@@ -182,19 +166,16 @@ export const about = {
       date: "July 2017",
       title: "Our Humble Beginnings",
       text: "We published ApexCharts.js and its surrounding libraries which quickly became one of the most popular solutions for building charts on the web.",
-      image: "/images/about/1.jpg",
     },
     {
       date: "March 2021",
       title: "A Firm is Born",
       text: "Vizograph Solutions was officially launched, offering specialized data visualization services.",
-      image: "/images/about/2.jpg",
     },
     {
       date: "October 2022",
       title: "Transition to Full Service",
       text: "In addition to data visualization, we began incorporating AI to generate more profound insights from your data.",
-      image: "/images/about/3.jpg",
     },
   ],
 };
@@ -219,9 +200,6 @@ export const team = {
 /* -------------------------------------------------------------------------- */
 
 export const contact = {
-  eyebrow: "Contact",
-  heading: "Let's talk about your data",
-  subheading: "Tell us what you are trying to see, and we will tell you how we would build it.",
   emailLabel: "Email us at",
   addressLabel: "Address",
   /** Shown on the page, one line each. */
@@ -238,4 +216,11 @@ export const contact = {
     postalCode: "380028",
     country: "IN",
   },
+};
+
+/** The glow-lit panel that closes the page. */
+export const closingBand = {
+  heading: "Have data worth looking at?",
+  text: "Send us what you are working with and we will come back with how we would visualize it.",
+  cta: { label: "Start a conversation", href: "#contact" },
 };

@@ -1,4 +1,5 @@
 import { StructuredData } from "@/components/layout/StructuredData";
+import { ClosingBand } from "@/components/sections/ClosingBand";
 import { ContactDetails } from "@/components/sections/ContactDetails";
 import { Hero } from "@/components/sections/Hero";
 import { ProjectsBento } from "@/components/sections/ProjectsBento";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <ProjectsBento />
       <StoryTimeline />
       <TeamGrid />
+      <ClosingBand />
       <ContactDetails />
       <StructuredData />
     </>

@@ -1,50 +1,53 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
+import { eyebrow as eyebrowClass } from "@/lib/styles";
 
 type Props = {
   eyebrow: string;
   title: string;
   subtitle?: string;
-  tone?: "light" | "dark";
-  /** Buttons or links shown opposite the heading. */
+  /** Most section headings are centred; left is used where a row needs balance. */
+  align?: "center" | "left";
   action?: ReactNode;
   className?: string;
 };
 
-/** Heading block used at the top of a section inside a page. */
 export function SectionHeader({
   eyebrow,
   title,
   subtitle,
-  tone = "light",
+  align = "center",
   action,
   className,
 }: Props) {
-  const dark = tone === "dark";
+  const centered = align === "center";
 
   return (
     <div
-      className={cn("flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between", className)}
+      className={cn(
+        centered
+          ? "flex flex-col items-center text-center"
+          : "flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between",
+        className,
+      )}
     >
-      <div className="max-w-2xl">
-        <p
-          className={cn(
-            "font-pixel text-xs tracking-wider uppercase",
-            dark ? "text-accent-soft" : "text-accent-ink",
-          )}
-        >
-          {eyebrow}
-        </p>
-        <h2 className="mt-4 font-display text-4xl leading-[0.95] font-medium tracking-tight sm:text-5xl lg:text-6xl">
+      <div className={cn(centered ? "max-w-3xl" : "max-w-2xl")}>
+        <p className={cn(eyebrowClass, "text-accent-soft")}>{eyebrow}</p>
+        <h2 className="mt-5 font-display text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl lg:text-[3.5rem]">
           {title}
         </h2>
         {subtitle && (
-          <p className={cn("mt-5 text-lg leading-relaxed", dark ? "text-white/70" : "text-muted")}>
+          <p
+            className={cn(
+              "mt-5 text-lg leading-relaxed text-muted",
+              centered && "mx-auto max-w-2xl",
+            )}
+          >
             {subtitle}
           </p>
         )}
       </div>
-      {action}
+      {action && <div className={cn(centered && "mt-8")}>{action}</div>}
     </div>
   );
 }
