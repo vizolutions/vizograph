@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   THEME — the single place to restyle the whole site.
+   Change these values and every section, button, card and the hero
+   illustration follow automatically. To move away from orange, only the
+   five --color-accent* values need to change.
+   ========================================================================== */
+@theme {
+  /* Surfaces */
+  --color-ground: #e8e7e4; /* page background */
+  --color-panel: #f1f0ed; /* cards, navbar */
+  --color-screen: #f7f6f3; /* inner screens in the hero illustration */
+  --color-card: #deddd9; /* subtle fills */
+  --color-line: #cfcdc8; /* hairlines */
+  --color-night: #141414; /* dark contact panel */
+
+  /* Text */
+  --color-ink: #111111; /* headings and body */
+  --color-muted: #525252; /* secondary text */
+  --color-wordmark: #fafaf8; /* giant pixel wordmark */
+
+  /* Brand accent */
+  --color-accent: #f26a0f;
+  --color-accent-light: #ffa149; /* gradient highlight */
+  --color-accent-soft: #ff8b2c; /* gradient start, accents on dark */
+  --color-accent-strong: #cf4f06; /* gradient end */
+  --color-accent-ink: #a84304; /* small accent text on light backgrounds */
+
+  /* Page width */
+  --container-page: 87.5rem; /* 1400px */
+
+  /* Shadows */
+  --shadow-float: 0 30px 50px -20px rgb(0 0 0 / 0.35);
+  --shadow-lift: 0 30px 50px -30px rgb(0 0 0 / 0.4);
+  --shadow-bar: 0 10px 30px -12px rgb(0 0 0 / 0.25);
+  --shadow-menu: 0 20px 40px -16px rgb(0 0 0 / 0.3);
+  --shadow-ring: 0 18px 24px -12px rgb(0 0 0 / 0.35);
+  --shadow-screen: inset 0 3px 10px rgb(0 0 0 / 0.18);
+  --shadow-device:
+    0 45px 70px -25px
+      color-mix(
+        in oklab,
+        color-mix(in oklab, var(--color-accent-strong) 55%, black) 55%,
+        transparent
+      ),
+    inset 0 2px 0 rgb(255 255 255 / 0.45), inset 0 -12px 24px rgb(0 0 0 / 0.18);
+  --shadow-accent-sm: 0 10px 20px -8px color-mix(in oklab, var(--color-accent) 70%, transparent);
+  --shadow-accent: 0 12px 24px -10px color-mix(in oklab, var(--color-accent) 80%, transparent);
+  --shadow-accent-lg: 0 20px 40px -16px color-mix(in oklab, var(--color-accent) 80%, transparent);
+
+  /* Motion */
+  --animate-float: float 7s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(0, -14px, 0);
+    }
+  }
+}
+
+/* Fonts are loaded by next/font in app/layout.tsx */
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-pixel: var(--font-silkscreen), ui-monospace, monospace;
+}
+
+/* Background of the hero panel */
+@utility hero-panel {
+  background:
+    radial-gradient(55% 50% at 50% 45%, rgb(255 255 255 / 0.6), transparent 70%),
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--color-ground) 93%, black) 0%,
+      color-mix(in oklab, var(--color-ground) 98%, black) 50%,
+      color-mix(in oklab, var(--color-ground) 89%, black) 100%
+    );
+}
+
+html {
+  scroll-behavior: smooth;
+  /* keeps section headings clear of the fixed navbar */
+  scroll-padding-top: 6rem;
+}
+
+/* stop the page behind a project popup from scrolling */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+body {
+  background: var(--color-ground);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
