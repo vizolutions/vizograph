@@ -6,21 +6,22 @@ const base =
   "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-[background-color,box-shadow,filter,color] disabled:opacity-60";
 
 const variants = {
-  /** Main call to action: the logo's cyan-to-teal gradient with dark text. */
-  accent:
-    "bg-linear-to-r from-accent via-accent-deep to-accent-soft text-ink shadow-glow-accent hover:brightness-105",
-  /** Solid dark pill, the highest-contrast option. */
+  /** Solid dark pill, the highest-contrast option and the default. */
   contrast: "bg-ink text-panel shadow-panel hover:bg-ink/90",
   /** Quiet frosted button. */
   glass: "glass text-ink ring-1 ring-ink/12 hover:ring-ink/25",
-  /** Amber accent, used sparingly. */
-  amber: "bg-linear-to-r from-amber-soft to-amber text-ink shadow-glow-amber hover:brightness-105",
+  /** White pill, for use on the teal panel. */
+  onDeep: "bg-panel text-ink shadow-panel hover:bg-panel/90",
+  /** Outlined pill, for use on the teal panel. */
+  onDeepOutline: "text-panel ring-1 ring-panel/40 hover:bg-panel/10",
 } as const;
 
 const sizes = {
   sm: "px-4 py-2.5 text-sm",
   md: "px-5 py-3 text-sm",
-  lg: "px-7 py-3.5 text-base",
+  lg: "px-6 py-3 text-base",
+  /** Leaves room for the circular arrow chip on the right. */
+  pill: "py-2 pr-2 pl-6 text-base",
 } as const;
 
 type StyleProps = {
@@ -38,7 +39,7 @@ type ButtonProps = StyleProps &
  * Renders a real button, or a link when given `href`.
  * Links inside the site route client-side; external ones are plain anchors.
  */
-export function Button({ variant = "accent", size = "md", className, ...props }: ButtonProps) {
+export function Button({ variant = "contrast", size = "md", className, ...props }: ButtonProps) {
   const classes = cn(base, variants[variant], sizes[size], className);
 
   if (typeof props.href === "string") {

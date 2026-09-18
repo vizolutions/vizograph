@@ -1,5 +1,6 @@
-import { ArrowUpRight, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import Image from "next/image";
+import { ArrowChip } from "@/components/ui/ArrowChip";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { contact, site } from "@/lib/content";
@@ -36,9 +37,14 @@ export function ContactDetails() {
               {site.email}
             </a>
           </div>
-          <Button href={`mailto:${site.email}`} size="lg" className="relative self-start">
+          <Button
+            href={`mailto:${site.email}`}
+            variant="contrast"
+            size="pill"
+            className="relative self-start"
+          >
             Send an email
-            <ArrowUpRight className="size-4" aria-hidden />
+            <ArrowChip tone="panel" />
           </Button>
         </div>
 
@@ -72,12 +78,13 @@ export function ContactDetails() {
           <Button
             href={mapsUrl}
             variant="glass"
+            size="pill"
             target="_blank"
             rel="noopener noreferrer"
-            className="self-start"
+            className="self-start ring-1 ring-ink/10"
           >
             Open in Google Maps
-            <ArrowUpRight className="size-4" aria-hidden />
+            <ArrowChip />
           </Button>
         </div>
       </div>

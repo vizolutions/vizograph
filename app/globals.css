@@ -9,10 +9,15 @@
    ========================================================================== */
 @theme {
   /* Surfaces */
-  --color-ground: #f6f8fb; /* page */
+  --color-ground: #f5f6fa; /* page */
   --color-panel: #ffffff; /* cards, nav */
-  --color-card: #eef2f7; /* raised tiles */
-  --color-line: #dde4ed; /* hairlines */
+  --color-card: #eef1f7; /* raised tiles */
+  --color-line: #e2e6ef; /* hairlines */
+
+  /* The deep teal panel behind the hero and the closing call to action.
+     It is the logo's cyan taken down until white type sits at 7.9:1. */
+  --color-deep: #0d5a63;
+  --color-deep-soft: #14717a;
 
   /* Text */
   --color-ink: #0b1220; /* headings and body */
@@ -27,8 +32,6 @@
 
   /* Brand accents — readable as text on light surfaces */
   --color-accent-ink: #0b7285;
-  --color-accent-deep-ink: #0a63c9;
-  --color-accent-soft-ink: #087a58;
   --color-amber-ink: #9a6206;
 
   /* Page width */
@@ -39,23 +42,6 @@
   --shadow-lift: 0 30px 60px -28px rgb(11 18 32 / 0.3);
   --shadow-bar: 0 10px 30px -14px rgb(11 18 32 / 0.2);
   --shadow-menu: 0 24px 50px -22px rgb(11 18 32 / 0.25);
-  --shadow-glow-accent: 0 16px 40px -16px color-mix(in oklab, var(--color-accent) 55%, transparent);
-  --shadow-glow-amber: 0 16px 40px -16px color-mix(in oklab, var(--color-amber) 50%, transparent);
-
-  /* Motion */
-  --animate-drift: drift 18s ease-in-out infinite;
-
-  @keyframes drift {
-    0%,
-    100% {
-      opacity: 0.75;
-      transform: translate3d(0, 0, 0) scale(1);
-    }
-    50% {
-      opacity: 1;
-      transform: translate3d(0, -2%, 0) scale(1.04);
-    }
-  }
 }
 
 /* Fonts are loaded by next/font in app/layout.tsx */
@@ -64,47 +50,26 @@
   --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Soft coloured light pooled behind a section */
-@utility glow-field {
+/* The teal panel behind the hero and the closing call to action */
+@utility deep-panel {
   background:
     radial-gradient(
-      55% 45% at 15% 0%,
-      color-mix(in oklab, var(--color-accent) 18%, transparent),
+      60% 60% at 80% 0%,
+      color-mix(in oklab, var(--color-deep-soft) 70%, transparent),
       transparent 70%
-    ),
-    radial-gradient(
-      45% 45% at 88% 12%,
-      color-mix(in oklab, var(--color-amber) 16%, transparent),
-      transparent 70%
-    ),
-    radial-gradient(
-      60% 50% at 50% 100%,
-      color-mix(in oklab, var(--color-accent-soft) 16%, transparent),
-      transparent 70%
-    ),
-    var(--color-panel);
-}
-
-/* Frosted surface used by the nav, tiles and panels */
-@utility glass {
-  background: color-mix(in oklab, var(--color-panel) 72%, transparent);
-  backdrop-filter: blur(14px);
-}
-
-/* Faint grid, like graph paper under the content */
-@utility grid-field {
-  background-image:
-    linear-gradient(
-      to right,
-      color-mix(in oklab, var(--color-ink) 12%, transparent) 1px,
-      transparent 1px
     ),
     linear-gradient(
-      to bottom,
-      color-mix(in oklab, var(--color-ink) 12%, transparent) 1px,
-      transparent 1px
+      160deg,
+      var(--color-deep-soft) 0%,
+      var(--color-deep) 55%,
+      var(--color-deep) 100%
     );
-  background-size: 64px 64px;
+}
+
+/* Frosted surface used by the nav and the mobile menu */
+@utility glass {
+  background: color-mix(in oklab, var(--color-panel) 80%, transparent);
+  backdrop-filter: blur(14px);
 }
 
 html {

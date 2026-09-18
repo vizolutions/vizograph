@@ -186,12 +186,8 @@ export const team = {
   subheading: "Meet the team behind Vizograph Solutions.",
   members: [
     { name: "Juned Chhipa", role: "Founder", image: "/images/team/juned2.jpg" },
-    { name: "Yamin Lawar", role: "Engineering Manager", image: "/images/team/yamin.jpg" },
-    { name: "Bhaumik Panchal", role: "Lead Fullstack Engineer", image: "/images/team/bhaumik.jpg" },
-    { name: "Hamza Shaikh", role: "AI/ML Engineer", image: "/images/team/hamza.jpeg" },
     { name: "Hunain Chhipa", role: "Fullstack Engineer", image: "/images/team/hunain.jpeg" },
     { name: "Zaeem Kadri", role: "Frontend Developer", image: "/images/team/zaeem.jpg" },
-    { name: "Naushadhusain Kadri", role: "Human Resource", image: "/images/team/naushad.jpg" },
   ],
 };
 

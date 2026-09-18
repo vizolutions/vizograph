@@ -27,7 +27,7 @@ export function OrbitVisual() {
       <div className="absolute inset-[16%] rounded-full border border-dashed border-ink/8" />
 
       {/* halo */}
-      <div className="absolute inset-[22%] rounded-full bg-accent/20 blur-3xl" />
+      <div className="absolute inset-[22%] rounded-full bg-deep/10 blur-3xl" />
 
       <svg viewBox="0 0 100 100" className="absolute inset-[24%]">
         <defs>
@@ -38,8 +38,8 @@ export function OrbitVisual() {
           </radialGradient>
           <linearGradient id="sphere-rim" x1="0" y1="1" x2="1" y2="0">
             <stop offset="0%" stopColor="var(--color-accent-soft)" />
-            <stop offset="55%" stopColor="var(--color-accent)" />
-            <stop offset="100%" stopColor="var(--color-accent-deep)" />
+            <stop offset="55%" stopColor="var(--color-deep-soft)" />
+            <stop offset="100%" stopColor="var(--color-deep)" />
           </linearGradient>
           <clipPath id="sphere-clip">
             <circle cx="50" cy="50" r="46" />

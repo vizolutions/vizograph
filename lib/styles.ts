@@ -8,12 +8,10 @@ export const pageGutter = "px-3 sm:px-4";
 
 /** Surfaces a tile can wear. */
 export const tileTones = {
-  /** Frosted white card: the default. */
-  glass: "glass ring-1 ring-ink/10 shadow-panel",
+  /** Plain white card: the default. */
+  glass: "bg-panel ring-1 ring-ink/8 shadow-panel",
   /** Slightly tinted solid card. */
   card: "bg-card ring-1 ring-ink/10",
-  /** Brand gradient, for the one highlighted item in a group. */
-  accent: "bg-linear-to-br from-accent via-accent-deep to-accent-soft text-ink",
   /** Amber gradient, used sparingly. */
   amber: "bg-linear-to-br from-amber-soft to-amber text-ink",
 } as const;

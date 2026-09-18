@@ -117,16 +117,14 @@ export function ServicesBento() {
                       "group relative isolate w-full overflow-hidden p-6 text-left sm:p-7",
                     ),
                     "transition-[box-shadow,transform] duration-500 ease-out",
-                    selected
-                      ? "shadow-glow-accent"
-                      : "hover:-translate-y-0.5 hover:ring-accent-ink/30",
+                    selected ? "shadow-lift" : "hover:-translate-y-0.5 hover:ring-accent-ink/30",
                   )}
                 >
                   {/* the gradient fades in behind the content instead of swapping */}
                   <span
                     aria-hidden
                     className={cn(
-                      "absolute inset-0 -z-10 bg-linear-to-br from-accent via-accent-deep to-accent-soft transition-opacity duration-500 ease-out",
+                      "absolute inset-0 -z-10 transition-opacity duration-500 ease-out deep-panel",
                       selected ? "opacity-100" : "opacity-0",
                     )}
                   />
@@ -135,7 +133,7 @@ export function ServicesBento() {
                     <span
                       className={cn(
                         "grid size-11 shrink-0 place-items-center rounded-2xl transition-colors duration-500",
-                        selected ? "bg-ink/10 text-ink" : "bg-ink/[0.05] text-accent-ink",
+                        selected ? "bg-panel/15 text-panel" : "bg-ink/[0.05] text-accent-ink",
                       )}
                     >
                       <Icon className="size-5" aria-hidden />
@@ -143,7 +141,7 @@ export function ServicesBento() {
                     <span
                       className={cn(
                         "font-display text-lg font-semibold tracking-tight transition-colors duration-500 sm:text-xl",
-                        selected ? "text-ink" : "text-ink",
+                        selected ? "text-panel" : "text-ink",
                       )}
                     >
                       {item.title}
@@ -158,7 +156,7 @@ export function ServicesBento() {
                       selected ? "max-h-64 opacity-100" : "max-h-0 opacity-0",
                     )}
                   >
-                    <span className="mt-4 block max-w-lg leading-relaxed text-ink/80">
+                    <span className="mt-4 block max-w-lg leading-relaxed text-panel/80">
                       {item.text}
                     </span>
                   </span>
