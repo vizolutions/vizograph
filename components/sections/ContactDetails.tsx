@@ -22,16 +22,16 @@ export function ContactDetails() {
         >
           <div
             aria-hidden
-            className="absolute -top-24 -left-10 size-72 rounded-full bg-accent/20 blur-3xl"
+            className="absolute -top-24 -left-10 size-72 rounded-full bg-accent/15 blur-3xl"
           />
           <div className="relative">
-            <span className="grid size-12 place-items-center rounded-2xl bg-white/[0.06] text-accent-soft ring-1 ring-white/10">
+            <span className="grid size-12 place-items-center rounded-2xl bg-ink/[0.05] text-accent-ink ring-1 ring-ink/10">
               <Mail className="size-5" aria-hidden />
             </span>
             <p className={`${eyebrow} mt-8 text-muted`}>{contact.emailLabel}</p>
             <a
               href={`mailto:${site.email}`}
-              className="mt-3 block font-display text-3xl font-semibold break-all transition-colors hover:text-accent-soft sm:text-5xl"
+              className="mt-3 block font-display text-3xl font-semibold break-all transition-colors hover:text-accent-ink sm:text-5xl"
             >
               {site.email}
             </a>
@@ -54,10 +54,10 @@ export function ContactDetails() {
             alt=""
             fill
             sizes="(min-width: 1024px) 40vw, 100vw"
-            className="-z-10 object-cover opacity-[0.18]"
+            className="-z-10 object-cover opacity-[0.12]"
           />
           <div>
-            <span className="grid size-12 place-items-center rounded-2xl bg-white/[0.06] text-amber ring-1 ring-white/10">
+            <span className="grid size-12 place-items-center rounded-2xl bg-ink/[0.05] text-amber-ink ring-1 ring-ink/10">
               <MapPin className="size-5" aria-hidden />
             </span>
             <p className={`${eyebrow} mt-8 text-muted`}>{contact.addressLabel}</p>

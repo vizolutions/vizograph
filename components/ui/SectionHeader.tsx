@@ -32,7 +32,7 @@ export function SectionHeader({
       )}
     >
       <div className={cn(centered ? "max-w-3xl" : "max-w-2xl")}>
-        <p className={cn(eyebrowClass, "text-accent-soft")}>{eyebrow}</p>
+        <p className={cn(eyebrowClass, "text-accent-ink")}>{eyebrow}</p>
         <h2 className="mt-5 font-display text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl lg:text-[3.5rem]">
           {title}
         </h2>

@@ -55,9 +55,14 @@ Give it `image` for a logo (or leave it out for a typographic tile, like Vizantr
 
 ### Change the theme
 
-Edit the `@theme` block at the top of `app/globals.css`. To move away from orange, change only the
-five `--color-accent*` values: buttons, icons, links, the timeline and the hero illustration all
-follow, because nothing in the components hard-codes a color.
+Edit the `@theme` block at the top of `app/globals.css`. The accents come from the logo:
+`--color-accent` (cyan) through `--color-accent-soft` (teal-green), plus `--color-amber`.
+
+Those raw logo colours are bright, so they are used as **fills** with dark text on top. When a
+brand colour has to be text on a light surface, use the darker `*-ink` variants
+(`--color-accent-ink`, `--color-amber-ink`), which are contrast-checked against the page.
+
+The dark version of this design is one commit away: `git show 0fe98ca`.
 
 ### Reuse the building blocks
 

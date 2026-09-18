@@ -9,7 +9,7 @@ import { StreakField } from "./StreakField";
 export function ClosingBand() {
   return (
     <section className={`${pageGutter} pt-8`}>
-      <div className="relative isolate overflow-hidden rounded-[2.5rem] ring-1 ring-white/10 glow-field">
+      <div className="relative isolate overflow-hidden rounded-[2.5rem] ring-1 ring-ink/10 glow-field">
         <StreakField className="top-auto bottom-[-15%] h-[70%] opacity-70" flip />
         <Container className="relative py-20 text-center lg:py-28">
           <h2 className="mx-auto max-w-3xl font-display text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl lg:text-[3.5rem]">
@@ -19,7 +19,7 @@ export function ClosingBand() {
             {closingBand.text}
           </p>
           <div className="mt-9 flex justify-center">
-            <Button href={closingBand.cta.href} variant="light" size="lg">
+            <Button href={closingBand.cta.href} variant="contrast" size="lg">
               {closingBand.cta.label}
               <ArrowRight className="size-4" aria-hidden />
             </Button>

@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { contact, navLinks, projects, site } from "@/lib/content";
 import { eyebrow, pageGutter } from "@/lib/styles";
 
-const columnHeading = `${eyebrow} text-accent-soft`;
+const columnHeading = `${eyebrow} text-accent-ink`;
 const columnLink = "text-sm text-muted transition-colors hover:text-ink";
 
 export function Footer() {
@@ -13,13 +13,13 @@ export function Footer() {
 
   return (
     <footer className={`${pageGutter} pt-10 pb-4`}>
-      <div className="relative overflow-hidden rounded-[2.5rem] ring-1 ring-white/10 glow-field">
+      <div className="relative overflow-hidden rounded-[2.5rem] ring-1 ring-ink/10 glow-field">
         <Container className="relative py-14">
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div className="sm:col-span-2 lg:col-span-1">
               <a href="#home">
                 <Image
-                  src="/images/logo/vizograph-logo-text-white.png"
+                  src="/images/logo/vizograph-logo-with-text.png"
                   alt="Vizograph"
                   width={617}
                   height={153}
@@ -84,13 +84,13 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row">
+          <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-ink/10 pt-6 sm:flex-row">
             <p className="text-center text-sm text-muted">
               Copyright &copy; {site.name} {site.foundedYear}&ndash;{year}
             </p>
             <a
               href="#home"
-              className="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium transition-colors hover:bg-panel"
+              className="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium transition-colors hover:bg-card"
             >
               Back to top
               <ArrowUp className="size-4" aria-hidden />

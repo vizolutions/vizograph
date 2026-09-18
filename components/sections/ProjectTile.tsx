@@ -17,16 +17,13 @@ export function ProjectTile({ project }: { project: Project }) {
         className="block h-1 w-14 rounded-full bg-linear-to-r from-accent to-accent-soft"
       />
 
-      <p className={`${eyebrow} mt-7 text-accent-soft`}>{project.intro}</p>
+      <p className={`${eyebrow} mt-7 text-accent-ink`}>{project.intro}</p>
       <h3 className="mt-4 font-display text-2xl font-semibold tracking-tight">{project.name}</h3>
       <p className="mt-1 text-sm text-muted">{project.caption}</p>
 
       <ul className="mt-5 flex flex-wrap gap-2">
         {project.details.map((detail) => (
-          <li
-            key={detail.value}
-            className={`${chip} bg-white/[0.06] text-muted ring-1 ring-white/10`}
-          >
+          <li key={detail.value} className={`${chip} bg-ink/[0.04] text-muted ring-1 ring-ink/10`}>
             {detail.label ? `${detail.label}: ${detail.value}` : detail.value}
           </li>
         ))}
@@ -36,10 +33,10 @@ export function ProjectTile({ project }: { project: Project }) {
 
       {href && (
         <span className="mt-auto flex items-center justify-between gap-4 pt-8">
-          <span className="text-sm font-medium text-ink transition-colors group-hover:text-accent-soft">
+          <span className="text-sm font-medium text-ink transition-colors group-hover:text-accent-ink">
             {href.replace("https://", "")}
           </span>
-          <span className="grid size-10 shrink-0 place-items-center rounded-full bg-white/[0.06] text-ink ring-1 ring-white/10 transition-colors group-hover:bg-accent-soft group-hover:text-ground">
+          <span className="grid size-10 shrink-0 place-items-center rounded-full bg-ink/[0.05] text-ink ring-1 ring-ink/10 transition-colors group-hover:bg-accent-soft group-hover:text-ink">
             <ArrowUpRight className="size-4" aria-hidden />
           </span>
         </span>

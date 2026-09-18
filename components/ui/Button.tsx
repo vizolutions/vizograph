@@ -6,16 +6,15 @@ const base =
   "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-[background-color,box-shadow,filter,color] disabled:opacity-60";
 
 const variants = {
-  /** Main call to action: the logo's cyan-to-teal gradient. */
+  /** Main call to action: the logo's cyan-to-teal gradient with dark text. */
   accent:
-    "bg-linear-to-r from-accent via-accent-deep to-accent-soft text-ground shadow-glow-accent hover:brightness-110",
-  /** Bright pill on the dark ground. */
-  light: "bg-ink text-ground shadow-panel hover:bg-white",
+    "bg-linear-to-r from-accent via-accent-deep to-accent-soft text-ink shadow-glow-accent hover:brightness-105",
+  /** Solid dark pill, the highest-contrast option. */
+  contrast: "bg-ink text-panel shadow-panel hover:bg-ink/90",
   /** Quiet frosted button. */
-  glass: "glass text-ink ring-1 ring-white/15 hover:ring-white/30",
+  glass: "glass text-ink ring-1 ring-ink/12 hover:ring-ink/25",
   /** Amber accent, used sparingly. */
-  amber:
-    "bg-linear-to-r from-amber-soft to-amber text-ground shadow-glow-amber hover:brightness-110",
+  amber: "bg-linear-to-r from-amber-soft to-amber text-ink shadow-glow-amber hover:brightness-105",
 } as const;
 
 const sizes = {

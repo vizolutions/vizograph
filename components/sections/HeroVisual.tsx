@@ -19,7 +19,7 @@ const donut = [
 
 /** Placeholder row in the mockup's sidebar. */
 function Row({ w }: { w: string }) {
-  return <span className="block h-2 rounded-full bg-white/10" style={{ width: w }} />;
+  return <span className="block h-2 rounded-full bg-ink/10" style={{ width: w }} />;
 }
 
 /**
@@ -30,23 +30,23 @@ export function HeroVisual() {
   return (
     <div
       aria-hidden
-      className="relative w-full overflow-hidden rounded-[2rem] p-3 shadow-panel ring-1 ring-white/10 glass sm:p-4"
+      className="relative w-full overflow-hidden rounded-[2rem] p-3 shadow-panel ring-1 ring-ink/10 glass sm:p-4"
     >
       <div className="grid gap-3 sm:grid-cols-[13rem_1fr]">
         {/* Sidebar */}
-        <div className="hidden flex-col gap-4 rounded-3xl bg-white/[0.03] p-5 ring-1 ring-white/5 sm:flex">
+        <div className="hidden flex-col gap-4 rounded-3xl bg-ink/[0.03] p-5 ring-1 ring-ink/8 sm:flex">
           <div className="flex items-center gap-2">
             <span className="size-6 rounded-lg bg-linear-to-br from-accent to-accent-soft" />
             <Row w="66%" />
           </div>
           <div className="mt-2 flex flex-col gap-3">
-            <span className="flex items-center gap-2 rounded-xl bg-white/[0.06] px-3 py-2">
+            <span className="flex items-center gap-2 rounded-xl bg-ink/[0.06] px-3 py-2">
               <span className="size-2 rounded-full bg-accent-soft" />
               <Row w="60%" />
             </span>
             {["52%", "44%", "58%", "38%"].map((w) => (
               <span key={w} className="flex items-center gap-2 px-3 py-2">
-                <span className="size-2 rounded-full bg-white/15" />
+                <span className="size-2 rounded-full bg-ink/15" />
                 <Row w={w} />
               </span>
             ))}
@@ -57,7 +57,7 @@ export function HeroVisual() {
         <div className="grid gap-3">
           <div className="grid gap-3 sm:grid-cols-[1fr_1.4fr]">
             {/* Bar chart */}
-            <div className="rounded-3xl bg-white/[0.03] p-5 ring-1 ring-white/5">
+            <div className="rounded-3xl bg-ink/[0.03] p-5 ring-1 ring-ink/8">
               <Row w="45%" />
               <svg viewBox="0 0 160 90" className="mt-5 w-full">
                 {bars.map((h, i) => (
@@ -68,14 +68,14 @@ export function HeroVisual() {
                     width="12"
                     height={h}
                     rx="4"
-                    fill={i === 5 ? accentSoft : "rgb(255 255 255 / 0.12)"}
+                    fill={i === 5 ? accentSoft : "rgb(11 18 32 / 0.10)"}
                   />
                 ))}
               </svg>
             </div>
 
             {/* Line chart */}
-            <div className="rounded-3xl bg-white/[0.03] p-5 ring-1 ring-white/5">
+            <div className="rounded-3xl bg-ink/[0.03] p-5 ring-1 ring-ink/8">
               <Row w="35%" />
               <svg viewBox="0 0 260 90" className="mt-5 w-full overflow-visible">
                 {[22, 45, 68].map((y) => (
@@ -103,7 +103,7 @@ export function HeroVisual() {
 
           <div className="grid gap-3 sm:grid-cols-[1.2fr_1fr]">
             {/* Donut + legend */}
-            <div className="flex items-center gap-5 rounded-3xl bg-white/[0.03] p-5 ring-1 ring-white/5">
+            <div className="flex items-center gap-5 rounded-3xl bg-ink/[0.03] p-5 ring-1 ring-ink/8">
               <svg viewBox="0 0 100 100" className="size-24 shrink-0 -rotate-90">
                 {donut.map((slice) => (
                   <circle
@@ -135,7 +135,7 @@ export function HeroVisual() {
               {[accentSoft, amber].map((color) => (
                 <div
                   key={color}
-                  className="flex items-center justify-between gap-4 rounded-3xl bg-white/[0.03] p-5 ring-1 ring-white/5"
+                  className="flex items-center justify-between gap-4 rounded-3xl bg-ink/[0.03] p-5 ring-1 ring-ink/8"
                 >
                   <span className="flex flex-col gap-2">
                     <Row w="3.5rem" />

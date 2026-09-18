@@ -53,9 +53,9 @@ function ServiceVisual({ kind }: { kind: ServiceKind }) {
   if (kind === "dashboard") {
     return (
       <svg viewBox="0 0 220 150" className="w-full" aria-hidden>
-        <rect x="10" y="12" width="200" height="126" rx="14" fill="rgb(255 255 255 / 0.04)" />
+        <rect x="10" y="12" width="200" height="126" rx="14" fill="rgb(11 18 32 / 0.05)" />
         <rect x="22" y="26" width="60" height="44" rx="10" fill={cyan} opacity="0.85" />
-        <rect x="90" y="26" width="108" height="44" rx="10" fill="rgb(255 255 255 / 0.08)" />
+        <rect x="90" y="26" width="108" height="44" rx="10" fill="rgb(11 18 32 / 0.08)" />
         <path
           d="M96 60 C 112 44, 126 56, 140 46 S 170 30, 192 36"
           fill="none"
@@ -63,9 +63,9 @@ function ServiceVisual({ kind }: { kind: ServiceKind }) {
           strokeWidth="3"
           strokeLinecap="round"
         />
-        <rect x="22" y="80" width="176" height="12" rx="6" fill="rgb(255 255 255 / 0.08)" />
+        <rect x="22" y="80" width="176" height="12" rx="6" fill="rgb(11 18 32 / 0.08)" />
         <rect x="22" y="80" width="104" height="12" rx="6" fill={accent} opacity="0.8" />
-        <rect x="22" y="102" width="176" height="12" rx="6" fill="rgb(255 255 255 / 0.08)" />
+        <rect x="22" y="102" width="176" height="12" rx="6" fill="rgb(11 18 32 / 0.08)" />
         <rect x="22" y="102" width="62" height="12" rx="6" fill={amber} opacity="0.85" />
       </svg>
     );
@@ -81,7 +81,7 @@ function ServiceVisual({ kind }: { kind: ServiceKind }) {
       <circle cx="158" cy="96" r="10" fill={cyan} opacity="0.9" />
       <circle cx="110" cy="122" r="10" fill={amber} />
       {[36, 84, 132, 180].map((x) => (
-        <circle key={x} cx={x} cy="140" r="4" fill="rgb(255 255 255 / 0.25)" />
+        <circle key={x} cx={x} cy="140" r="4" fill="rgb(11 18 32 / 0.2)" />
       ))}
     </svg>
   );
@@ -117,7 +117,9 @@ export function ServicesBento() {
                       "group relative isolate w-full overflow-hidden p-6 text-left sm:p-7",
                     ),
                     "transition-[box-shadow,transform] duration-500 ease-out",
-                    selected ? "shadow-glow-accent" : "hover:-translate-y-0.5 hover:ring-accent/40",
+                    selected
+                      ? "shadow-glow-accent"
+                      : "hover:-translate-y-0.5 hover:ring-accent-ink/30",
                   )}
                 >
                   {/* the gradient fades in behind the content instead of swapping */}
@@ -133,7 +135,7 @@ export function ServicesBento() {
                     <span
                       className={cn(
                         "grid size-11 shrink-0 place-items-center rounded-2xl transition-colors duration-500",
-                        selected ? "bg-ground/15 text-ground" : "bg-white/[0.06] text-accent-soft",
+                        selected ? "bg-ink/10 text-ink" : "bg-ink/[0.05] text-accent-ink",
                       )}
                     >
                       <Icon className="size-5" aria-hidden />
@@ -141,7 +143,7 @@ export function ServicesBento() {
                     <span
                       className={cn(
                         "font-display text-lg font-semibold tracking-tight transition-colors duration-500 sm:text-xl",
-                        selected ? "text-ground" : "text-ink",
+                        selected ? "text-ink" : "text-ink",
                       )}
                     >
                       {item.title}
@@ -156,7 +158,7 @@ export function ServicesBento() {
                       selected ? "max-h-64 opacity-100" : "max-h-0 opacity-0",
                     )}
                   >
-                    <span className="mt-4 block max-w-lg leading-relaxed text-ground/80">
+                    <span className="mt-4 block max-w-lg leading-relaxed text-ink/80">
                       {item.text}
                     </span>
                   </span>
@@ -185,7 +187,7 @@ export function ServicesBento() {
                     : "pointer-events-none translate-y-3 opacity-0",
                 )}
               >
-                <p className={`${eyebrow} text-accent-soft`}>{item.title}</p>
+                <p className={`${eyebrow} text-accent-ink`}>{item.title}</p>
                 <div className="mt-8">
                   <ServiceVisual kind={item.icon} />
                 </div>

@@ -21,7 +21,7 @@ export function StoryTimeline() {
         {about.timeline.map((item, i) => (
           <li key={item.date} className={tile("glass", "flex flex-col p-7")}>
             <span className="flex items-center justify-between gap-4">
-              <span className={`${eyebrow} text-accent-soft`}>{item.date}</span>
+              <span className={`${eyebrow} text-accent-ink`}>{item.date}</span>
               <span className="font-display text-sm text-muted">
                 {String(i + 1).padStart(2, "0")}
               </span>

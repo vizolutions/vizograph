@@ -23,18 +23,18 @@ export function OrbitVisual() {
   return (
     <div aria-hidden className="relative mx-auto aspect-square w-[min(88vw,32rem)]">
       {/* orbit rings */}
-      <div className="absolute inset-[4%] rounded-full border border-white/[0.08]" />
-      <div className="absolute inset-[16%] rounded-full border border-dashed border-white/[0.06]" />
+      <div className="absolute inset-[4%] rounded-full border border-ink/10" />
+      <div className="absolute inset-[16%] rounded-full border border-dashed border-ink/8" />
 
       {/* halo */}
-      <div className="absolute inset-[22%] rounded-full bg-accent/25 blur-3xl" />
+      <div className="absolute inset-[22%] rounded-full bg-accent/20 blur-3xl" />
 
       <svg viewBox="0 0 100 100" className="absolute inset-[24%]">
         <defs>
           <radialGradient id="sphere-face" cx="35%" cy="28%">
-            <stop offset="0%" stopColor="#0f1a2c" />
-            <stop offset="70%" stopColor="#070b14" />
-            <stop offset="100%" stopColor="#05070d" />
+            <stop offset="0%" stopColor="#ffffff" />
+            <stop offset="70%" stopColor="#eef3f9" />
+            <stop offset="100%" stopColor="#dfe8f2" />
           </radialGradient>
           <linearGradient id="sphere-rim" x1="0" y1="1" x2="1" y2="0">
             <stop offset="0%" stopColor="var(--color-accent-soft)" />
@@ -60,7 +60,7 @@ export function OrbitVisual() {
                 height="4"
                 rx="0.8"
                 fill={cell.on ? "var(--color-accent-soft)" : "var(--color-accent)"}
-                opacity={cell.on ? 0.55 : 0.16}
+                opacity={cell.on ? 0.75 : 0.28}
               />
             )),
           )}
@@ -76,14 +76,14 @@ export function OrbitVisual() {
           strokeWidth="2.5"
           opacity="0.95"
         />
-        <circle cx="50" cy="50" r="46" fill="none" stroke="var(--color-ground)" strokeWidth="0.5" />
+        <circle cx="50" cy="50" r="46" fill="none" stroke="var(--color-panel)" strokeWidth="0.5" />
       </svg>
 
       {/* milestone pills on the ring */}
       {about.timeline.map((item, i) => (
         <span
           key={item.date}
-          className={`absolute glass ${positions[i]} rounded-full px-4 py-2 text-sm font-medium text-ink ring-1 ring-white/15`}
+          className={`absolute glass ${positions[i]} rounded-full px-4 py-2 text-sm font-medium text-ink ring-1 ring-ink/10`}
         >
           {item.date}
         </span>
